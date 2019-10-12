@@ -4,11 +4,12 @@ import './page/components/app-components.js'
 import './page/default/app-default.js'
 import './page/guide/app-guide.js'
 import './page/other/app-other.js'
+import './common/app-header.js'
 class Main extends LitElement {
 
   constructor () {
     super()
-    this._welcome = html`<app-welcome @routeTo="${this._routeTo}"></app-welcome>`
+    this._welcome = html`<app-welcome></app-welcome>`
     this._componets = html`<app-components></app-components>`
     this._guide = html`<app-guide></app-guide>`
     this._other = html`<app-other></app-other>`
@@ -39,6 +40,7 @@ class Main extends LitElement {
   render () {
     return html`
       <div class="app-main">
+        <app-header @routeTo="${this._routeTo}"></app-header>
         <div>${this.projectPages[this._router]}</div>
       </div>
     `

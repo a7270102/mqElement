@@ -12,13 +12,13 @@ class Main extends LitElement {
     this._componets = html`<app-components></app-components>`
     this._guide = html`<app-guide></app-guide>`
     this._other = html`<app-other></app-other>`
-    this._default = html`<app-default></app-default>`
+    // this._default = html`<app-default></app-default>`
     this.projectPages = {
-      welcome: this._welcome,
+      null: this._welcome,
       components: this._componets,
       guide: this._guide,
       other:this._other,
-      null: this._default
+      // null: this._default
     }
     this._router = null
   }
@@ -26,7 +26,6 @@ class Main extends LitElement {
   render () {
     return html`
       <div slot="content">
-        <p>I‘am ChenMingQi, This is my first custom UI lab!</p>
         <slot name="content">${this.projectPages[this._router]}</slot>
       </div>
     `

@@ -10,28 +10,28 @@
     }
   </script>
   -->
-  
+
   <!-- Load polyfills -->
-  <script 
+  <script
     src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"
     defer>
-  </script> 
+  </script>
 
   <!-- Load components via WebComponents.waitFor -->
   <script type="module">
-    window.WebComponents = window.WebComponents || { 
+    window.WebComponents = window.WebComponents || {
       waitFor(cb){ addEventListener('WebComponentsReady', cb) }
-    } 
-    WebComponents.waitFor(async () => { 
+    }
+    WebComponents.waitFor(async () => {
       import('./src/main.js');
     });
   </script>
-  
+
   <!-- Change stuff here for your app -->
   <meta name="description" content="cyys app">
   <meta name="theme-color" content="#ffffff">
   <title>My application</title>
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="manifest" href="./manifest.json">
   <link rel="shortcut icon" href="/manifest/favicon.ico">
@@ -40,6 +40,6 @@
 </head>
 <body>
  <cyy-app>
-   <div>这里的字会显示吗?</div>
+   <div><p>I‘am ChenMingQi, This is my first custom UI lab!</p></div>
  </cyy-app>
 </body>

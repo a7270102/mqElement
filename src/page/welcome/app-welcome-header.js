@@ -1,6 +1,6 @@
 import {LitElement, html, css, unsafeCSS } from 'lit-element'
 
-class AppHeader extends LitElement {
+class AppWelcomeHeader extends LitElement {
 
   static get properties() {
     return {}
@@ -68,3 +68,4 @@ class AppHeader extends LitElement {
     `
   }
 }
+customElements.define('app-welcome-header', AppWelcomeHeader)

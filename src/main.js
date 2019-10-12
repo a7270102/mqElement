@@ -8,7 +8,7 @@ class Main extends LitElement {
 
   constructor () {
     super()
-    this._welcome = html`<app-welcome></app-welcome>`
+    this._welcome = html`<app-welcome @routeTo="${this._routeTo}"></app-welcome>`
     this._componets = html`<app-components></app-components>`
     this._guide = html`<app-guide></app-guide>`
     this._other = html`<app-other></app-other>`
@@ -23,10 +23,23 @@ class Main extends LitElement {
     this._router = null
   }
 
+  /**
+   * 切换路由方法
+   * @private
+   */
+  _routeTo (e) {
+    e.stopPropagation()
+    let router = e.detail.router
+    console.log('我获取到路由更新:', router)
+    this._router = router
+    // 更新视图
+    this.requestUpdate()
+  }
+
   render () {
     return html`
-      <div slot="content">
-        <slot name="content">${this.projectPages[this._router]}</slot>
+      <div class="app-main">
+        <div>${this.projectPages[this._router]}</div>
       </div>
     `
   }

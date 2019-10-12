@@ -20,7 +20,7 @@ class AppWelcomeHeader extends LitElement {
     let routeToEvent = new CustomEvent('routeTo', {
       detail: {router},
       bubbles: true,
-      composed: false
+      composed: true
     })
     this.dispatchEvent(routeToEvent)
   }
@@ -34,7 +34,7 @@ class AppWelcomeHeader extends LitElement {
           </div>
           <ul class="nav" @click="${this._routeToHandler}">
             <li data-name="guide" class="nav-item">指南</li>
-            <li data-name="component" class="nav-item">组件</li>
+            <li data-name="components" class="nav-item">组件</li>
             <li data-name="other" class="nav-item">其他</li>
           </ul>
         </div>
